@@ -7,6 +7,12 @@
 * Offline
 * python dictnary format
 
+# INSTALLATION:
+
+```perl
+$ python3 -m pip install fundb
+```
+
 ## IMPORT AND INTI:
 
 ```python
