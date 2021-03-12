@@ -1,37 +1,88 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/Madhava-mng/FunDB/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# FunDB
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+'FunDB for local dict structured database for python
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* Easy to use
+* Offline
+* python dictnary format
 
-```markdown
-Syntax highlighted code block
+# INSTALLATION:
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```perl
+$ python3 -m pip install fundb
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## IMPORT AND INTI:
 
-### Jekyll Themes
+```python
+>>> from fundb import fdb
+>>> db = fdb('nameOfDb',  'secret',  rotate = 8000, layer = 1)
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Madhava-mng/FunDB/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## CREATE DB:
 
-### Support or Contact
+* It over write data
+* (type) dict only
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```python
+>>> Data = {'name': 'cat', 'age': 2}
+>>> db.write(Data)
+```
+
+## READ DATA:
+* (type) dict only
+
+```python
+>>> db.read()
+{'name': 'cat', 'age': 2}
+```
+
+## NSERT PARRENT KEY:
+
+```python
+>>> db.insert('key1', ['value1', 'value2'])
+{'name': 'cat', 'age': 2, 'key1': ['value1', 'value2']}
+```
+
+## REMOVE PARRENT KEY:
+
+```python
+>>> db.remove('key1')
+{'name': 'cat', 'age': 2}
+```
+
+## GET VALUE FROM PARRENT KEY:
+
+```python
+>>> db.getval('age')
+2
+```
+## SEARCH VALUE:
+
+```python
+>>> tmp = db.search('ca')
+>>> list[tmp]
+[{'name': 'cat'}]
+```
+
+## DB INFO:
+
+```python
+>>> db.db_info()
+{'Name': 'nameOfDb.dbf', 'Created': 'Fri Mar 12 07:52:32 2021', 'Modifyed': 'Fri Mar 12 07:52:32 2021', 'Size': 120, 'Mode': 33152, 'UId': 1000, 'GId': 1000}
+```
+
+## FREE READ AND WRITE:
+* Insert Any format
+
+```python
+>>> Data2 = 'String type'
+>>> db.free_write(Data2)
+>>> db.free_read()
+'String type'
+```
+
+
+
