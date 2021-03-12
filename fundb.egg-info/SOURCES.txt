@@ -1,0 +1,10 @@
+README.md
+setup.py
+fundb/__init__.py
+fundb/fundb.py
+fundb/test.py
+fundb.egg-info/PKG-INFO
+fundb.egg-info/SOURCES.txt
+fundb.egg-info/dependency_links.txt
+fundb.egg-info/requires.txt
+fundb.egg-info/top_level.txt
