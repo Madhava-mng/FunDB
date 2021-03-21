@@ -17,7 +17,7 @@ $ python3 -m pip install fundb
 
 ```python
 >>> from fundb import fdb
->>> db = fdb('nameOfDb',  'secret',  rotate = 8000, layer = 1)
+>>> db = fdb('nameOfDb',  'secret',  rotate = 8000)
 ```
 
 ## CREATE DB:
