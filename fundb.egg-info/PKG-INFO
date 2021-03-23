@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fundb
-Version: 0.0.1
+Version: 0.0.3
 Summary: Simple database for Python user
 Home-page: https://github.com/Madhava-mng/FunDB
 Author: Madhava
@@ -25,7 +25,7 @@ Description: # FunDB
         
         ```python
         >>> from fundb import fdb
-        >>> db = fdb('nameOfDb',  'secret',  rotate = 8000, layer = 1)
+        >>> db = fdb('nameOfDb',  'secret',  rotate = 8000)
         ```
         
         ## CREATE DB:

@@ -1,20 +1,21 @@
 __doc__ = '''FunDB for local dict structured database for python
 
 
+                 <<< FUN 𝌆 >>>
+
+
+
    -> Easy to use
    -> Offline
    -> python dictnary format
 
 IMPORT AND INTI:
     >>> from fundb import fdb
-    >>> db = fdb('nameOfDb',  'secret',  rotate = 8000, layer = 1)
+    >>> db = fdb('nameOfDb',  'secret',  rotate = 8000)
 
         > db_Name = 'nameOfDb'   [required]
         > password = 'secret'    [optional]
         > rotate = 8000          [optional]
-        > layer = 1              [optional]  # slows the process
-                                             According to the layer.
-        > rrotate = 6            [optional]
 
 CREATE DB:
    -> It over write data

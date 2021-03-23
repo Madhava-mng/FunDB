@@ -25,14 +25,12 @@ RDATA = {
 
 
 class Fundb:
-    def __init__(self, db_name, password = "pass", rotate = 500, layer=0, rrotate=6):
+    def __init__(self, db_name, password = "pass", rotate = 420):
         if(db_name in RDATA["EXP"]):
             raise Exception(RDATA["INE"])
         self.db_name = db_name
         self.passwd = password
         self.rotate = rotate
-        self.layer = layer
-        self.rrotate = rrotate
         self.exten = ".dbf"
         if(self.db_name == ""):
             raise Exception(RDATA["FNF"])
@@ -46,7 +44,7 @@ class Fundb:
         if(type(data) != dict):
             raise Exception(RDATA["TYE2"])
         with open(self.db_name+self.exten, "w") as a:
-            enc_data = encrypt(benc(str(data)), self.passwd, self.rotate, self.layer, self.rrotate)
+            enc_data = encrypt(benc(str(data)), self.passwd, self.rotate)
             a.write(enc_data)
             a.close()
             if(verbose):
@@ -61,7 +59,7 @@ class Fundb:
         """
         try:
             with open(self.db_name+self.exten, "r") as a:
-                data = decrypt(a.read(), self.passwd, self.rotate, self.layer, self.rrotate)
+                data = decrypt(a.read(), self.passwd, self.rotate)
                 a.close()
                 return eval(bdec(data))
         except UnicodeDecodeError:
@@ -80,7 +78,7 @@ class Fundb:
         >>> mdb.free_write("data")
         """
         with open(self.db_name+self.exten, "w") as a:
-            enc_data = encrypt(benc(str(data)), self.passwd, self.rotate, self.layer, self.rrotate)
+            enc_data = encrypt(benc(str(data)), self.passwd, self.rotate)
             a.write(enc_data)
             a.close()
             if(verbose):
@@ -95,7 +93,7 @@ class Fundb:
         """
         try:
             with open(self.db_name+self.exten, "r") as a:
-                data = decrypt(a.read(), self.passwd, self.rotate, self.layer, self.rrotate)
+                data = decrypt(a.read(), self.passwd, self.rotate)
                 a.close()
                 return bdec(data)
         except UnicodeDecodeError:
