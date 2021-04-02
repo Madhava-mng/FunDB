@@ -52,6 +52,13 @@ $ python3 -m pip install fundb
 {'name': 'cat', 'age': 2}
 ```
 
+## CHECK PARRENT KEY:
+
+```python
+>>> db.iskey('age')
+True
+```
+
 ## GET VALUE FROM PARRENT KEY:
 
 ```python

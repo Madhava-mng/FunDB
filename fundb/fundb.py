@@ -1,7 +1,5 @@
 
 from milkycow import *
-from codelib.base import base64encode as benc
-from codelib.base import base64decode as bdec
 from re import search, ASCII
 from getpass import getpass as ainput
 from os import remove, stat
@@ -25,7 +23,7 @@ RDATA = {
 
 
 class Fundb:
-    def __init__(self, db_name, password = "pass", rotate = 420):
+    def __init__(self, db_name, password = "pass", rotate = 229):
         if(db_name in RDATA["EXP"]):
             raise Exception(RDATA["INE"])
         self.db_name = db_name
@@ -44,7 +42,7 @@ class Fundb:
         if(type(data) != dict):
             raise Exception(RDATA["TYE2"])
         with open(self.db_name+self.exten, "w") as a:
-            enc_data = encrypt(benc(str(data)), self.passwd, self.rotate)
+            enc_data = encrypt(str(data), self.passwd, self.rotate)
             a.write(enc_data)
             a.close()
             if(verbose):
@@ -61,7 +59,7 @@ class Fundb:
             with open(self.db_name+self.exten, "r") as a:
                 data = decrypt(a.read(), self.passwd, self.rotate)
                 a.close()
-                return eval(bdec(data))
+                return eval(data)
         except UnicodeDecodeError:
             raise Exception(RDATA["UDE"])
         except FileNotFoundError:
@@ -78,7 +76,7 @@ class Fundb:
         >>> mdb.free_write("data")
         """
         with open(self.db_name+self.exten, "w") as a:
-            enc_data = encrypt(benc(str(data)), self.passwd, self.rotate)
+            enc_data = encrypt(str(data), self.passwd, self.rotate)
             a.write(enc_data)
             a.close()
             if(verbose):
@@ -177,6 +175,16 @@ class Fundb:
                 yield data
             except:
                 pass
+
+    def iskey(self, key):
+        try:
+            data = self.read()
+            for i in data.keys():
+                if(i == key):
+                    return True
+        except:
+            pass
+        return False
 
 
 

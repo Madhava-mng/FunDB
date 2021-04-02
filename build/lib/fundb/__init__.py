@@ -1,6 +1,10 @@
 __doc__ = '''FunDB for local dict structured database for python
 
 
+                 <<< FUN 𝌆 >>>
+
+
+
    -> Easy to use
    -> Offline
    -> python dictnary format
@@ -47,6 +51,12 @@ GET VALUE FROM PARRENT KEY:
     2
 
         > key = 'age'
+
+CHECK PARRENT KEY:
+    >>> db.iskey('age')
+    True
+    >>> db.iskey("nokey")
+    False
 
 SEARCH VALUE:
     >>> tmp = db.search('ca')

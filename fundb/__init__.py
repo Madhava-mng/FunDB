@@ -52,6 +52,12 @@ GET VALUE FROM PARRENT KEY:
 
         > key = 'age'
 
+CHECK PARRENT KEY:
+    >>> db.iskey('age')
+    True
+    >>> db.iskey("nokey")
+    False
+
 SEARCH VALUE:
     >>> tmp = db.search('ca')
     >>> list[tmp]

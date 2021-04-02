@@ -25,7 +25,7 @@ RDATA = {
 
 
 class Fundb:
-    def __init__(self, db_name, password = "pass", rotate = 500, layer=0, rrotate=6):
+    def __init__(self, db_name, password = "pass", rotate = 509, layer=0, rrotate=6):
         if(db_name in RDATA["EXP"]):
             raise Exception(RDATA["INE"])
         self.db_name = db_name
@@ -46,7 +46,7 @@ class Fundb:
         if(type(data) != dict):
             raise Exception(RDATA["TYE2"])
         with open(self.db_name+self.exten, "w") as a:
-            enc_data = encrypt(benc(str(data)), self.passwd, self.rotate, self.layer, self.rrotate)
+            enc_data = encrypt(str(data), self.passwd, self.rotate, self.layer, self.rrotate)
             a.write(enc_data)
             a.close()
             if(verbose):
@@ -63,7 +63,7 @@ class Fundb:
             with open(self.db_name+self.exten, "r") as a:
                 data = decrypt(a.read(), self.passwd, self.rotate, self.layer, self.rrotate)
                 a.close()
-                return eval(bdec(data))
+                return eval(data)
         except UnicodeDecodeError:
             raise Exception(RDATA["UDE"])
         except FileNotFoundError:

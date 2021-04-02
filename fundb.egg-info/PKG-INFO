@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fundb
-Version: 0.0.3
+Version: 0.0.5
 Summary: Simple database for Python user
 Home-page: https://github.com/Madhava-mng/FunDB
 Author: Madhava
@@ -58,6 +58,13 @@ Description: # FunDB
         ```python
         >>> db.remove('key1')
         {'name': 'cat', 'age': 2}
+        ```
+        
+        ## CHECK PARRENT KEY:
+        
+        ```python
+        >>> db.iskey('age')
+        True
         ```
         
         ## GET VALUE FROM PARRENT KEY:
