@@ -7,7 +7,7 @@ __doc__ = '''FunDB for local dict structured database for python
 
    -> Easy to use
    -> Offline
-   -> python dictnary format
+   -> python dictionary format
 
 IMPORT AND INTI:
     >>> from fundb import fdb

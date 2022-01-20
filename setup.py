@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="fundb",
-    version="0.0.5",
-    author="Madhava",
+    version="0.0.6",
+    author="Madhava-mng",
     author_email="alformint@gmail.com",
-    description="Simple database for Python user",
+    description="Simple dictionary database for Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Madhava-mng/FunDB",

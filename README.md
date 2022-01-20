@@ -5,7 +5,7 @@
 
 * Easy to use
 * Offline
-* python dictnary format
+* python dictionary format
 
 # INSTALLATION:
 
