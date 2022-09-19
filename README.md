@@ -1,6 +1,6 @@
 # FunDB
 
-'FunDB for local dict structured database for python
+FunDB for dictionary structured database for python
 
 
 * Easy to use
